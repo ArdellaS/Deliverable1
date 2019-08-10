@@ -1,0 +1,68 @@
+using System;
+
+namespace Deliverable2
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+
+            Console.WriteLine("Happy Friday! What would you like to do this weekend? Pick a number:\n1.) Action \n2.) Chilling \n3.) Danger\n4.) Good Food");
+            int pickActivity = Convert.ToInt32(Console.ReadLine());
+
+            string selectedActivity;
+            string suggestedActivity;
+            if (pickActivity == 1)
+            {
+                selectedActivity = "action";
+                suggestedActivity = "Go-Kart Racing";
+            }
+            else if (pickActivity == 2)
+            {
+                selectedActivity = "chilling";
+                suggestedActivity = "hiking";
+            }
+            else if (pickActivity == 3)
+            {
+                selectedActivity = "danger";
+                suggestedActivity = "skydiving";
+            }
+            else
+            {
+                selectedActivity = "good food";
+                suggestedActivity = "to IHOP";
+            }
+
+
+            Console.WriteLine("How many people are you bringing with you?");
+
+            int peopleNumber = Convert.ToInt32(Console.ReadLine());
+
+            string travelMethod;
+            if (peopleNumber == 0)
+            {
+                travelMethod = "sneakers.";
+            }
+
+            else if (peopleNumber <= 4)
+            {
+                travelMethod = "a sedan.";
+            }
+
+            else if (peopleNumber <= 10)
+            {
+                travelMethod = "a Volkswagen bus.";
+            }
+
+            else
+            {
+                travelMethod = "an airplane.";
+            }
+
+            Console.WriteLine($"If you to try {selectedActivity} this weekend, then you should go {suggestedActivity} and you should travel in {travelMethod}\nHave a good weekend!");
+
+            Console.Read();
+
+        }
+    }
+}
