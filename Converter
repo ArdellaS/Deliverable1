@@ -1,0 +1,67 @@
+using System;
+
+namespace Lab1
+{
+
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+
+
+
+            Console.WriteLine("Enter a dollar amount:");
+            double firstAmount = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter a second dollar amount:");
+            double secondAmount = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter a third dollar amount:");
+            double thirdAmount = Convert.ToDouble(Console.ReadLine());
+
+            double average = (firstAmount + secondAmount + thirdAmount) / 3;
+
+            Console.WriteLine($"The average amount is: ${average}");
+
+            double smallest;
+            if (firstAmount < secondAmount && firstAmount < thirdAmount)
+            {
+                smallest = firstAmount;
+            }
+            else if (secondAmount < firstAmount && secondAmount < thirdAmount)
+            {
+                smallest = secondAmount;
+            }
+            else
+            {
+                smallest = thirdAmount;
+            }
+
+            Console.WriteLine($"The smallest amount is: ${smallest}");
+
+            double largest;
+
+            if (firstAmount > secondAmount && firstAmount > thirdAmount)
+            {
+                largest = firstAmount;
+            }
+            else if (secondAmount > firstAmount && secondAmount > thirdAmount)
+            {
+                largest = secondAmount;
+            }
+            else
+            {
+                largest = thirdAmount;
+            }
+            Console.WriteLine($"The largest amount is: ${largest}");
+
+            double total = firstAmount + secondAmount + thirdAmount;
+            
+            Console.WriteLine($"The amount of dollars in USD is ${ total}");
+            Console.WriteLine($"The amount of dollars in Swedish Krona is {total * 9.26}kr");
+            Console.WriteLine($"The amount of dollars in Japanese Yenn is ¥{Math.Truncate(total * 111.48)}");
+            Console.WriteLine($"The amount of dollars in Thai Baht is ฿{total * 31.73}");
+            Console.Read();
+        }
+    }
+}
